@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  jupyterlab:
+    image: 'kinocode-jupyterlab:latest'
+    build: .
+    container_name: kinocode--jupyterlab
+    environment:
+      - NB_UID=100
+      - GEN_CERT=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_ENABLE_LAB=yes
+    ports:
+      - '8888:8888'
